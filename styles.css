@@ -17,6 +17,30 @@
     --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ===== Available for Projects Button (Hero) ===== */
+.btn-available {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: var(--accent);
+    color: white !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    box-shadow: 0 0 20px var(--accent-glow);
+    opacity: 0;
+    animation: fade-slide-in 0.8s ease-out 0.4s forwards;
+}
+
+.btn-available:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 25px var(--accent-glow);
+}
+
 /* ===== Reset & Base ===== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -49,6 +73,12 @@ body {
         radial-gradient(ellipse 60% 40% at 0% 80%, rgba(167, 139, 250, 0.08), transparent);
     pointer-events: none;
     z-index: 0;
+    animation: gradient-drift 15s ease-in-out infinite;
+}
+
+@keyframes gradient-drift {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.02); }
 }
 
 .bg-grid {
@@ -93,6 +123,12 @@ body {
     color: var(--accent);
     text-decoration: none;
     letter-spacing: 0.05em;
+    transition: var(--transition);
+}
+
+.nav-logo:hover {
+    transform: scale(1.08);
+    text-shadow: 0 0 20px var(--accent-glow);
 }
 
 .nav-links {
@@ -172,6 +208,8 @@ body {
     margin-bottom: 0.5rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    opacity: 0;
+    animation: fade-slide-in 0.8s ease-out forwards;
 }
 
 .hero-name {
@@ -184,24 +222,43 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    opacity: 0;
+    animation: fade-slide-in 0.8s ease-out 0.2s forwards;
 }
 
 .hero-title {
     font-size: 1.15rem;
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fade-slide-in 0.8s ease-out 0.35s forwards;
 }
 
 .hero-location {
     font-size: 0.95rem;
     color: var(--text-muted);
     margin-bottom: 2rem;
+    opacity: 0;
+    animation: fade-slide-in 0.8s ease-out 0.5s forwards;
 }
 
 .hero-cta {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: fade-slide-in 0.8s ease-out 0.6s forwards;
+}
+
+@keyframes fade-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .btn {
@@ -216,6 +273,7 @@ body {
     border-radius: var(--radius);
     transition: var(--transition);
     cursor: pointer;
+    transform-origin: center;
 }
 
 .btn-primary {
@@ -227,8 +285,8 @@ body {
 .btn-primary:hover {
     background: var(--accent-light);
     border-color: var(--accent-light);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 40px var(--accent-glow);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 45px var(--accent-glow);
 }
 
 .btn-secondary {
@@ -240,6 +298,8 @@ body {
 .btn-secondary:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
 }
 
 .btn-outline {
@@ -250,6 +310,8 @@ body {
 
 .btn-outline:hover {
     background: rgba(139, 92, 246, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
 }
 
 .nav-cv {
@@ -301,6 +363,12 @@ body {
     box-shadow: 0 0 60px var(--accent-glow);
     position: relative;
     z-index: 1;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
 }
 
 /* Scroll Indicator */
@@ -368,11 +436,17 @@ body {
     position: absolute;
     bottom: -8px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
     width: 60px;
     height: 4px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
     border-radius: 2px;
+    transition: transform 0.6s ease-out;
+}
+
+.section-title.active::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
 /* ===== About ===== */
@@ -712,6 +786,8 @@ body {
 .contact-link:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
 }
 
 .contact-icon {
