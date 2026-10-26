@@ -125,7 +125,7 @@
         <div class="container">
             <h2 class="section-title reveal">Projects</h2>
             <div class="projects-grid">
-                <article class="project-card reveal">
+                <article class="project-card reveal" role="link" tabindex="0" data-project-url="https://github.com/syedhamzamehdiii" aria-label="Open Nozama.ai project">
                     <div class="project-icon">🤖</div>
                     <h3>Nozama.ai - AI Marketplace Platform</h3>
                     <p>An AI marketplace platform catering to user needs for AI tools.</p>
@@ -136,7 +136,7 @@
                         <li>Worked on scalable backend APIs, frontend UI components, and secure role-based access control</li>
                     </ul>
                 </article>
-                <article class="project-card reveal">
+                <article class="project-card reveal" role="link" tabindex="0" data-project-url="https://github.com/mahams12/Fin-Botics" aria-label="Open CPA AI Bot project">
                     <div class="project-icon">💰</div>
                     <h3>CPA AI Bot - Intelligent Financial Assistant</h3>
                     <p>A full-stack automated financial assistant with AI-powered features.</p>
@@ -147,7 +147,7 @@
                         <li>Secured with Google OAuth authentication</li>
                     </ul>
                 </article>
-                <article class="project-card reveal">
+                <article class="project-card reveal" role="link" tabindex="0" data-project-url="https://github.com/mahams12/crypto-website" aria-label="Open CryptoTracker project">
                     <div class="project-icon">📈</div>
                     <h3>CryptoTracker - Cryptocurrency Price Tracker</h3>
                     <p>Real-time cryptocurrency tracking website with live market data.</p>
@@ -158,7 +158,7 @@
                         <li>Optimized performance for cross-device compatibility · Deployed on Vercel</li>
                     </ul>
                 </article>
-                <article class="project-card reveal">
+                <article class="project-card reveal" role="link" tabindex="0" data-project-url="https://github.com/mahams12/AI-based-Content-Recommendation-System" aria-label="Open AI-Based Content Recommendation System project">
                     <div class="project-icon">🎬</div>
                     <h3>AI-Based Content Recommendation System</h3>
                     <p>Cross-platform Flutter app for personalized media recommendations.</p>
@@ -168,7 +168,7 @@
                         <li>AI chat interface, viewing history, Favorites system, and real-time Firebase synchronization</li>
                     </ul>
                 </article>
-                <article class="project-card reveal">
+                <article class="project-card reveal" role="link" tabindex="0" data-project-url="https://github.com/syedhamzamehdiii/Trips-Adora" aria-label="Open TripsAdora project">
                     <div class="project-icon">✈️</div>
                     <h3>TripsAdora - Travel Booking & Management System</h3>
                     <p>Large-scale, multi-platform travel booking system.</p>
@@ -178,10 +178,10 @@
                         <li>Frontend applications using React and Tailwind CSS</li>
                     </ul>
                 </article>
-<article class="project-card reveal"><div class="project-icon">🚗</div><h3>ORA — Ride-Hailing Platform</h3><p>A ride-hailing platform with live driver presence, nearby-driver matching and ride request workflows.</p><ul><li>In development; real-world latency and deployment behavior are still being validated.</li><li>Technologies: Flutter, Firebase, Firestore, Realtime Database</li></ul></article>
-<article class="project-card reveal"><div class="project-icon">🔐</div><h3>SafeApp — Social & Private Messaging</h3><p>A social mobile application with feeds, reels, chats and distinct main/private account experiences.</p><ul><li>Includes account-switching and session reliability engineering.</li><li>Technologies: Flutter, Firebase, Authentication</li></ul></article>
-<article class="project-card reveal"><div class="project-icon">📅</div><h3>PostFlow — Creator Publishing Workspace</h3><p>A publishing workspace for connected social accounts, content preparation and platform-aware posting.</p><ul><li>Under development.</li><li>Technologies: Web, OAuth, Social APIs</li></ul></article>
-<article class="project-card reveal"><div class="project-icon">🌐</div><h3>NovexaHub — Digital Solutions Studio</h3><p>A digital services website for custom web and mobile applications, AI solutions, automation and design.</p><ul><li>Explore at novexahub.live.</li><li>Technologies: Web, UI/UX, Product Development</li></ul></article>
+<article class="project-card reveal" role="link" tabindex="0" data-project-url="https://github.com/mahams12/Ora-app" aria-label="Open ORA — project"><div class="project-icon">🚗</div><h3>ORA — Ride-Hailing Platform</h3><p>A ride-hailing platform with live driver presence, nearby-driver matching and ride request workflows.</p><ul><li>In development; real-world latency and deployment behavior are still being validated.</li><li>Technologies: Flutter, Firebase, Firestore, Realtime Database</li></ul></article>
+<article class="project-card reveal" role="link" tabindex="0" data-project-url="https://play.google.com/store/apps/details?id=com.st.safeapp" aria-label="Open SafeApp — project"><div class="project-icon">🔐</div><h3>SafeApp — Social & Private Messaging</h3><p>A social mobile application with feeds, reels, chats and distinct main/private account experiences.</p><ul><li>Includes account-switching and session reliability engineering.</li><li>Technologies: Flutter, Firebase, Authentication</li></ul></article>
+<article class="project-card reveal" role="link" tabindex="0" data-project-url="https://postflow.novexahub.live" aria-label="Open PostFlow — project"><div class="project-icon">📅</div><h3>PostFlow — Creator Publishing Workspace</h3><p>A publishing workspace for connected social accounts, content preparation and platform-aware posting.</p><ul><li>Under development.</li><li>Technologies: Web, OAuth, Social APIs</li></ul></article>
+<article class="project-card reveal" role="link" tabindex="0" data-project-url="https://novexahub.live" aria-label="Open NovexaHub — project"><div class="project-icon">🌐</div><h3>NovexaHub — Digital Solutions Studio</h3><p>A digital services website for custom web and mobile applications, AI solutions, automation and design.</p><ul><li>Explore at novexahub.live.</li><li>Technologies: Web, UI/UX, Product Development</li></ul></article>
             </div>
         </div>
     </section>
@@ -301,5 +301,6 @@
     </footer>
 
     <script src="script.js"></script>
+<script>document.querySelectorAll('[data-project-url]').forEach(card=>{const open=()=>window.open(card.dataset.projectUrl,'_blank','noopener,noreferrer');card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});</script>
 </body>
 </html>
